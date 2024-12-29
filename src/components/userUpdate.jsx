@@ -14,7 +14,7 @@ export default function UserUpdate() {
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/users/${id}` // Fetch user data
+          `https://server-backs.vercel.app/api/users/${id}` // Fetch user data
         );
         if (!response.ok) {
           throw new Error("Failed to fetch user");
@@ -47,7 +47,7 @@ export default function UserUpdate() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/users/${id}`, // Update user data
+        `https://server-backs.vercel.app/api/users/${id}`, // Update user data
         {
           method: "PUT",
           body: formData,
