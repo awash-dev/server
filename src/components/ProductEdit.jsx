@@ -17,7 +17,7 @@ export default function EditProduct() {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/products/${id}`
+          `https://server-backs.vercel.app/api/products/${id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch product");
@@ -72,7 +72,7 @@ export default function EditProduct() {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+      const response = await fetch(`https://server-backs.vercel.app/api/products/${id}`, {
         method: "PUT",
         body: formData,
       });
