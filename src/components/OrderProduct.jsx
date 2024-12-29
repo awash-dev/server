@@ -12,7 +12,7 @@ export default function OrderProduct() {
     const fetchProducts = async () => {
       try {
         console.log("Fetching products...");
-        const response = await fetch("http://localhost:3000/api/products");
+        const response = await fetch("https://server-backs.vercel.app/api/products");
         if (!response.ok) {
           throw new Error("Failed to fetch products");
         }
@@ -32,7 +32,7 @@ export default function OrderProduct() {
 
   const handleOrder = async (productId) => {
     try {
-      const response = await fetch("http://localhost:3000/api/orders", {
+      const response = await fetch("https://server-backs.vercel.app/api/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
