@@ -57,7 +57,7 @@ export default function CreateProduct() {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/api/products", {
+      const response = await fetch("https://server-backs.vercel.app/api/products", {
         method: "POST",
         body: formDataToSend,
       });
