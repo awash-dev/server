@@ -15,7 +15,7 @@ export default function ProductList() {
     const fetchProducts = async () => {
       try {
         console.log("Fetching products...");
-        const response = await fetch("http://localhost:3000/api/products");
+        const response = await fetch("https://server-backs.vercel.app/api/products");
         if (!response.ok) {
           throw new Error("Failed to fetch products");
         }
@@ -34,7 +34,7 @@ export default function ProductList() {
   }, []);
 
   const handleImageClick = (image) => {
-    setSelectedImage(`http://localhost:3000/img/${image}`);
+    setSelectedImage(`https://server-backs.vercel.app/img/${image}`);
   };
 
   const closeModal = () => {
@@ -51,7 +51,7 @@ export default function ProductList() {
     setDeletingId(id);
 
     try {
-      const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+      const response = await fetch(`https://server-backs.vercel.app/api/products/${id}`, {
         method: "DELETE",
       });
 
@@ -136,7 +136,7 @@ export default function ProductList() {
                     </td>
                     <td className="py-3 px-4 border-b">
                       <img
-                        src={`http://localhost:3000/img/${product.image}`}
+                        src={`https://server-backs.vercel.app/img/${product.image}`}
                         alt={product.name}
                         className="w-20 rounded-lg h-16 object-center cursor-pointer "
                         onClick={() => handleImageClick(product.image)}
