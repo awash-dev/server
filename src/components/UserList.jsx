@@ -14,7 +14,7 @@ export default function User() {
     const fetchUsers = async () => {
       try {
         console.log("Fetching users...");
-        const response = await fetch("http://localhost:3000/api/users");
+        const response = await fetch("https://server-backs.vercel.app/api/users");
         if (!response.ok) {
           throw new Error("Failed to fetch users");
         }
@@ -38,7 +38,7 @@ export default function User() {
       setDeletingId(userId);
       try {
         const response = await fetch(
-          `http://localhost:3000/api/users/${userId}`,
+          `https://server-backs.vercel.app/api/users/${userId}`,
           {
             method: "DELETE",
           }
